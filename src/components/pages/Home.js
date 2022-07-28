@@ -5,6 +5,11 @@ import {Link} from "react-router-dom";
 import "../Home.css";
 
 function Home() {
+  const [state,setState] = useState(false);
+
+  const toggle=()=>{
+    setState(!state);
+  }
     return (
         <div className ='homepage-container'>
         <div className = 'welcome-sign'>
@@ -19,7 +24,12 @@ function Home() {
             <div className = 'mycnt'>Connection Name 4</div>
           </div>
           <div className = 'new-connections'>
-          <div className = 'reqTitle'><h1>Connection Requests</h1></div>
+          <div className = 'reqTitle'>
+            <h1>Connection Requests</h1>
+            <button onClick = {toggle} className ={'toggle--button ' + (state ? 'toggle--close':'')}>
+              {state ? 'Opt in!' : 'Opt Out!'}
+            </button>
+          </div>
             <div className = 'cntReq'>
                 <div className = 'reqCnt'>
                   <div className = 'name'>Connection Request Name 1</div>
