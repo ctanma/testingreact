@@ -1,16 +1,15 @@
 import React, {useState, useEffect} from 'react'
 import '../../App.css'
-import HomePage from '../HomePage'
-import {Link} from "react-router-dom";
 import "../Home.css";
 
-function Home() {
+export default function Home() {
   const [state,setState] = useState(false);
 
   const toggle=()=>{
     setState(!state);
   }
-    return (
+  return (
+      
         <div className ='homepage-container'>
         <div className = 'welcome-sign'>
           <h1>Welcome, User!</h1>
@@ -81,4 +80,3 @@ function Home() {
     );
   }
 
-export default Home;
